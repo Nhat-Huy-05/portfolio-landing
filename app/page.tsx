@@ -1,7 +1,5 @@
+import HomeSections from "@/components/home-sections";
+
 export default function Home() {
-  return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  );
+  return <HomeSections />;
 }
