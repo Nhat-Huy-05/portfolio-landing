@@ -1,8 +1,5 @@
-const navItems = [
-  { href: "#about", label: "About" },
-  { href: "#introduce", label: "Introduce" },
-  { href: "#contact", label: "Contact" },
-];
+import Link from "next/link";
+import { navItems } from "@/constants/navigation";
 
 export default function Navbar() {
   return (
@@ -17,13 +14,13 @@ export default function Navbar() {
           className="flex items-center gap-4"
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm font-medium text-foreground transition-colors hover:text-primary"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
