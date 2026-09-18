@@ -19,8 +19,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md transition-colors">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
+    /* Outer wrapper: fixed, full-width, centered, pointer-events-none to allow clicks on page behind padding area */
+    <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-4 sm:px-6 pt-4 pointer-events-none">
+      <header className="pointer-events-auto w-full max-w-6xl flex items-center justify-between px-5 sm:px-6 py-2.5 rounded-xl border transition-all duration-300 bg-background/70 backdrop-blur-md border-border/60 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+
         {/* Brand / Logo */}
         <Link
           href="#hero"
@@ -116,7 +118,7 @@ export default function Navbar() {
             </Sheet>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   )
 }
