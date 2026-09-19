@@ -21,7 +21,7 @@ export default function Footer() {
             {personal.name} • {personal.title}
           </p>
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {personal.name}. Thiết kế chuẩn mực với Next.js, Tailwind CSS & shadcn/ui.
+            © {new Date().getFullYear()} {personal.name}.
           </p>
         </div>
 
@@ -40,20 +40,6 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
-
-        {/* Right: Scroll to top */}
-        <div className="flex items-center gap-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={scrollToTop}
-            className="gap-1.5 text-xs text-muted-foreground hover:text-foreground"
-            aria-label="Cuộn lên đầu trang"
-          >
-            <ArrowUp className="size-3.5" />
-            <span>Lên đầu trang</span>
-          </Button>
-        </div>
       </div>
     </footer>
   )
