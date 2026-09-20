@@ -1,28 +1,27 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Menu, Send } from "lucide-react"
-import { portfolioConfig } from "@/config/portfolio"
-import { Button, buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { ModeToggle } from "@/components/mode-toggle"
+import * as React from "react";
+import Link from "next/link";
+import { Menu, Send } from "lucide-react";
+import { portfolioConfig } from "@/config/portfolio";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { ModeToggle } from "@/components/mode-toggle";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetTrigger
-} from "@/components/ui/sheet"
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     /* Outer wrapper: fixed, full-width, centered, pointer-events-none to allow clicks on page behind padding area */
-    <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-4 sm:px-6 pt-4 pointer-events-none">
-      <header className="pointer-events-auto w-full max-w-6xl flex items-center justify-between px-5 sm:px-6 py-2.5 rounded-xl border transition-all duration-300 bg-background/70 backdrop-blur-md border-border/60 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
-
+    <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-2 sm:px-3 pt-2.5 pointer-events-none">
+      <header className="pointer-events-auto w-[calc(100%-0.5rem)] max-w-[1400px] flex items-center justify-between px-4 sm:px-6 py-3 rounded-2xl border transition-all duration-300 bg-background/75 backdrop-blur-md border-border/60 shadow-[0_6px_26px_rgba(0,0,0,0.08)] dark:shadow-[0_6px_26px_rgba(0,0,0,0.45)]">
         {/* Brand / Logo */}
         <Link
           href="#hero"
@@ -60,7 +59,7 @@ export default function Navbar() {
             href="#contact"
             className={cn(
               buttonVariants({ size: "sm" }),
-              "hidden sm:inline-flex gap-1.5"
+              "hidden sm:inline-flex gap-1.5",
             )}
           >
             <Send className="size-3.5" />
@@ -108,7 +107,10 @@ export default function Navbar() {
                   <Link
                     href="#contact"
                     onClick={() => setIsOpen(false)}
-                    className={cn(buttonVariants(), "w-full justify-center gap-2")}
+                    className={cn(
+                      buttonVariants(),
+                      "w-full justify-center gap-2",
+                    )}
                   >
                     <Send className="size-4" />
                     <span>Liên hệ ngay</span>
@@ -120,5 +122,5 @@ export default function Navbar() {
         </div>
       </header>
     </div>
-  )
+  );
 }
