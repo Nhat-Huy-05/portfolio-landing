@@ -221,67 +221,30 @@ export const portfolioConfig: PortfolioConfig = {
   ],
   projects: [
     {
-      id: "saas-analytics",
-      title: "PulseMetrics - Nền tảng SaaS Phân tích Dữ liệu",
-      description:
-        "Bảng điều khiển phân tích thời gian thực xử lý hơn 10 triệu sự kiện mỗi ngày. Tích hợp biểu đồ trực quan, phân quyền đa người dùng và hệ thống cảnh báo tự động.",
-      category: "SaaS & Dashboard",
-      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "Redis"],
-      liveUrl: "https://example.com/demo/pulse-metrics",
-      githubUrl: "https://github.com/example/pulse-metrics",
-      highlights: [
-        "Xử lý dữ liệu real-time với WebSockets và Redis pub/sub",
-        "Tối ưu SSR giúp giảm 45% thời gian phản hồi trang",
-        "Đồng bộ theme sáng/tối toàn diện"
-      ],
+      id: "project-1",
+      title: "Dự án 1",
+      description: "Mô tả ngắn về dự án sẽ được cập nhật sau.",
+      category: "Web App",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      highlights: [],
       featured: true
     },
     {
-      id: "ai-content-studio",
-      title: "OmniAI - Bộ công cụ Trợ lý Sáng tạo Nội dung",
-      description:
-        "Ứng dụng AI đa tính năng hỗ trợ tạo kịch bản, tóm tắt tài liệu và trích xuất dữ liệu thông minh qua API OpenAI và Claude, kèm theo quản lý phiên bản tài liệu.",
-      category: "AI & Productivity",
-      techStack: ["React 19", "Next.js", "TypeScript", "Tailwind CSS", "Vercel AI SDK"],
-      liveUrl: "https://example.com/demo/omni-ai",
-      githubUrl: "https://github.com/example/omni-ai",
-      highlights: [
-        "Giao diện streaming phản hồi trực tiếp không có độ trễ",
-        "Kiến trúc modular dễ dàng bổ sung mô hình LLM mới",
-        "Hỗ trợ xuất file đa định dạng Markdown, PDF, DOCX"
-      ],
+      id: "project-2",
+      title: "Dự án 2",
+      description: "Mô tả ngắn về dự án sẽ được cập nhật sau.",
+      category: "SaaS",
+      techStack: ["React", "Node.js", "PostgreSQL"],
+      highlights: [],
       featured: true
     },
     {
-      id: "ecommerce-storefront",
-      title: "Aura Commerce - Nền tảng Thương mại Điện tử",
-      description:
-        "Hệ thống bán hàng trực tuyến hiệu năng cao với trải nghiệm checkout 1 bước, giỏ hàng tức thời và tích hợp cổng thanh toán bảo mật.",
-      category: "E-Commerce",
-      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Stripe API", "Vercel"],
-      liveUrl: "https://example.com/demo/aura-commerce",
-      githubUrl: "https://github.com/example/aura-commerce",
-      highlights: [
-        "Điểm số Google Lighthouse 100/100 tuyệt đối",
-        "Tối ưu hình ảnh tự động qua next/image",
-        "Bảo mật thanh toán chuẩn PCI-DSS qua Stripe Webhook"
-      ],
-      featured: true
-    },
-    {
-      id: "dev-toolkit",
-      title: "DevForge - Bộ công cụ Tiện ích dành cho Lập trình viên",
-      description:
-        "Tập hợp các tiện ích mã nguồn mở chạy hoàn toàn trên trình duyệt: JSON formatter, regex tester, code diff, token inspector và mã hóa dữ liệu.",
-      category: "Developer Tooling",
-      techStack: ["Next.js", "TypeScript", "Web Workers", "Tailwind CSS", "shadcn/ui"],
-      liveUrl: "https://example.com/demo/dev-forge",
-      githubUrl: "https://github.com/example/dev-forge",
-      highlights: [
-        "Chạy offline 100% không gửi dữ liệu người dùng lên server",
-        "Sử dụng Web Workers để xử lý dữ liệu lớn trên client",
-        "Hơn 1.200 lượt stars trên GitHub"
-      ],
+      id: "project-3",
+      title: "Dự án 3",
+      description: "Mô tả ngắn về dự án sẽ được cập nhật sau.",
+      category: "Mobile / Web",
+      techStack: ["Next.js", "Prisma", "Vercel"],
+      highlights: [],
       featured: false
     }
   ],
