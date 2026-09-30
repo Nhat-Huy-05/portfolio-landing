@@ -1,106 +1,60 @@
-import { ShieldCheck, Palette, Gauge } from "lucide-react"
-import { portfolioConfig } from "@/config/portfolio"
-import { Badge } from "@/components/ui/badge"
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent
-} from "@/components/ui/card"
-
-const principleIcons = [
-  <ShieldCheck key="shield" className="size-5 text-primary" />,
-  <Palette key="palette" className="size-5 text-primary" />,
-  <Gauge key="gauge" className="size-5 text-primary" />
-]
+import { portfolioConfig } from "@/config/portfolio";
 
 export default function AboutSection() {
-  const { about } = portfolioConfig.personal
+  const { about, location } = portfolioConfig.personal;
 
   return (
-    <section id="about" className="scroll-mt-20 py-20">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-12">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center">
-          <Badge variant="outline" className="mb-3">
-            Giới thiệu
-          </Badge>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Về bản thân & Định hướng
+    <section
+      id="about"
+      className="scroll-mt-24 border-t border-border py-20 sm:py-28"
+    >
+      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div>
+          <p className="mb-5 font-mono text-xs uppercase text-accent">
+            01 / Góc nhìn
+          </p>
+          <h2 className="max-w-sm font-heading text-4xl font-medium leading-tight sm:text-5xl">
+            Làm cho mọi thứ{" "}
+            <span className="font-serif italic">rõ ràng hơn.</span>
           </h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            Hành trình xây dựng giải pháp công nghệ bền vững, đề cao trải nghiệm người dùng và chất lượng mã nguồn.
+          <p className="mt-6 flex items-center gap-2 font-mono text-xs uppercase text-muted-foreground">
+            <span className="size-2 bg-primary" aria-hidden="true" />
+            {location}
           </p>
         </div>
 
-        {/* Narrative bio paragraphs */}
-        <Card className="border-border bg-card/60 backdrop-blur-xs">
-          <CardContent className="flex flex-col gap-4 p-6 sm:p-8">
-            {about.paragraphs.map((paragraph, index) => (
+        <div>
+          <div className="flex max-w-2xl flex-col gap-5">
+            {about.paragraphs.map((paragraph) => (
               <p
-                key={index}
-                className="text-base leading-relaxed text-card-foreground/90 sm:text-lg"
+                key={paragraph}
+                className="text-base leading-8 text-muted-foreground sm:text-lg"
               >
                 {paragraph}
               </p>
             ))}
-          </CardContent>
-        </Card>
+          </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {about.stats.map((stat, index) => (
-            <Card
-              key={index}
-              className="text-center transition-all hover:border-primary/40 hover:shadow-sm"
-            >
-              <CardHeader className="pb-2">
-                <CardTitle className="font-heading text-3xl font-bold text-primary sm:text-4xl">
-                  {stat.value}
-                </CardTitle>
-                <p className="font-heading font-medium text-foreground">
-                  {stat.label}
-                </p>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <CardDescription className="text-xs">
-                  {stat.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Core Principles */}
-        <div className="flex flex-col gap-6">
-          <h3 className="text-center font-heading text-xl font-semibold text-foreground sm:text-2xl">
-            Nguyên tắc phát triển phần mềm
-          </h3>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="mt-12 border-t border-border">
             {about.corePrinciples.map((principle, index) => (
-              <Card
+              <article
                 key={principle.title}
-                className="flex flex-col justify-between transition-all hover:border-primary/40"
+                className="grid gap-2 border-b border-border py-5 sm:grid-cols-[3rem_1fr] sm:gap-4"
               >
-                <CardHeader>
-                  <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary/10">
-                    {principleIcons[index % principleIcons.length]}
-                  </div>
-                  <CardTitle className="text-base font-semibold">
-                    {principle.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-sm leading-normal">
+                <span className="font-mono text-xs text-accent">
+                  0{index + 1}
+                </span>
+                <div className="grid gap-2 md:grid-cols-[0.8fr_1.2fr] md:gap-8">
+                  <h3 className="font-medium">{principle.title}</h3>
+                  <p className="text-sm leading-6 text-muted-foreground">
                     {principle.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

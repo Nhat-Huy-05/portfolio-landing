@@ -1,263 +1,129 @@
-export interface SocialLink {
-  name: string
-  href: string
-  icon: "github" | "linkedin" | "twitter" | "mail" | "telegram"
-  ariaLabel: string
-}
-
 export interface NavItem {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }
 
 export interface SkillItem {
-  name: string
-  highlight?: boolean
+  name: string;
+  highlight?: boolean;
 }
 
 export interface SkillCategory {
-  category: string
-  description: string
-  skills: SkillItem[]
-}
-
-export interface ProjectItem {
-  id: string
-  title: string
-  description: string
-  category: string
-  techStack: string[]
-  liveUrl?: string
-  githubUrl?: string
-  highlights: string[]
-  featured: boolean
-}
-
-export interface StatItem {
-  value: string
-  label: string
-  description: string
+  category: string;
+  description: string;
+  skills: SkillItem[];
 }
 
 export interface PortfolioConfig {
   personal: {
-    name: string
-    title: string
-    tagline: string
-    status: string
-    shortBio: string
+    name: string;
+    title: string;
+    tagline: string;
+    status: string;
+    shortBio: string;
     about: {
-      paragraphs: string[]
-      stats: StatItem[]
+      paragraphs: string[];
       corePrinciples: {
-        title: string
-        description: string
-      }[]
-    }
-    location: string
-    email: string
-    phone: string
-    resumeUrl: string
-  }
-  navItems: NavItem[]
-  socialLinks: SocialLink[]
-  skillCategories: SkillCategory[]
-  projects: ProjectItem[]
+        title: string;
+        description: string;
+      }[];
+    };
+    location: string;
+    email: string;
+  };
+  navItems: NavItem[];
+  skillCategories: SkillCategory[];
   contact: {
-    title: string
-    subtitle: string
-    email: string
-    phone: string
-    location: string
-    workingHours: string
-    responseTime: string
-  }
+    title: string;
+    subtitle: string;
+    email: string;
+    location: string;
+  };
 }
 
 export const portfolioConfig: PortfolioConfig = {
   personal: {
     name: "Nguyễn Huy",
-    title: "Senior Full-stack Engineer",
-    tagline: "Xây dựng ứng dụng web hiện đại, tối ưu hiệu năng và kiến trúc chuẩn mực.",
-    status: "Sẵn sàng đón nhận cơ hội & dự án mới",
+    title: "Full-stack Engineer",
+    tagline:
+      "Làm web chỉn chu, từ cảm giác khi dùng đến cách mọi thứ vận hành bên dưới.",
+    status: "Đang mở với cơ hội phù hợp",
     shortBio:
-      "Kỹ sư phần mềm đam mê công nghệ với chuyên môn sâu về Next.js, TypeScript, Tailwind CSS, hệ sinh thái Node.js và Cloud Native. Tập trung vào việc tạo ra sản phẩm tinh tế, giao diện mượt mà và mã nguồn dễ mở rộng.",
+      "Tôi xây dựng sản phẩm web từ giao diện đến backend, quan tâm đồng thời đến trải nghiệm người dùng, hiệu năng và mã nguồn có thể tiếp tục phát triển.",
     about: {
       paragraphs: [
-        "Với hơn 4 năm kinh nghiệm thực chiến trong phát triển sản phẩm web từ giai đoạn ý tưởng (0-to-1) cho đến quy mô mở rộng hàng triệu người dùng, tôi luôn ưu tiên trải nghiệm người dùng cuối cùng song song với tính ổn định kỹ thuật.",
-        "Tôi tin rằng một sản phẩm xuất sắc không chỉ nằm ở giao diện bắt mắt mà còn đến từ cấu trúc thư mục rành mạch, tính năng tái sử dụng component cao, type-safety tuyệt đối và quy trình CI/CD mượt mà.",
-        "Ngoài thời gian lập trình, tôi thường xuyên đóng góp cho các dự án nguồn mở, viết chia sẻ kỹ thuật và tìm tòi các kỹ thuật tối ưu hóa hiệu năng web mới nhất."
-      ],
-      stats: [
-        {
-          value: "4+ Năm",
-          label: "Kinh nghiệm thực chiến",
-          description: "Phát triển frontend & backend toàn diện"
-        },
-        {
-          value: "25+",
-          label: "Dự án đã bàn giao",
-          description: "Từ SaaS, E-commerce đến Web3 & AI tooling"
-        },
-        {
-          value: "99.9%",
-          label: "Uptime & Performance",
-          description: "Chuẩn Lighthouse SEO & Core Web Vitals"
-        }
+        "Tôi thích phần giao nhau giữa giao diện và kỹ thuật: một sản phẩm cần dễ hiểu khi sử dụng, nhưng cũng cần có cấu trúc đủ rõ để tiếp tục thay đổi.",
+        "Khi xây dựng tính năng, tôi chú ý đến những điều nhỏ người dùng cảm nhận được và những quyết định trong codebase sẽ giúp người tiếp theo làm việc dễ dàng hơn.",
       ],
       corePrinciples: [
         {
-          title: "Clean Architecture & DRY",
-          description: "Mã nguồn rõ ràng, phân tách trách nhiệm cụ thể và dễ dàng kiểm thử, bảo trì dài hạn."
+          title: "Rõ ràng trước, phức tạp sau",
+          description:
+            "Chọn cấu trúc vừa đủ để người khác có thể đọc, kiểm thử và tiếp tục phát triển.",
         },
         {
-          title: "Design System Driven",
-          description: "Nhất quán 100% về token màu sắc, typography và spacing thông qua CSS Variables."
+          title: "Chi tiết nhỏ cũng là trải nghiệm",
+          description:
+            "Nhịp điệu, trạng thái và phản hồi của giao diện đều góp phần làm sản phẩm dễ dùng hơn.",
         },
         {
-          title: "Hiệu năng là cốt lõi",
-          description: "Tối ưu hóa thời gian tải trang, First Contentful Paint (FCP) và Largest Contentful Paint (LCP)."
-        }
-      ]
+          title: "Đo rồi mới tối ưu",
+          description:
+            "Ưu tiên cải thiện có thể quan sát và kiểm chứng, thay vì tối ưu chỉ để có con số đẹp.",
+        },
+      ],
     },
     location: "TP. Hồ Chí Minh, Việt Nam",
     email: "contact@huydev.me",
-    phone: "+84 (0) 90 123 4567",
-    resumeUrl: "#contact"
   },
   navItems: [
-    { label: "Giới thiệu", href: "#about" },
-    { label: "Kỹ năng", href: "#skills" },
-    { label: "Dự án", href: "#projects" },
-    { label: "Liên hệ", href: "#contact" }
-  ],
-  socialLinks: [
-    {
-      name: "GitHub",
-      href: "https://github.com",
-      icon: "github",
-      ariaLabel: "Xem trang GitHub cá nhân"
-    },
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com",
-      icon: "linkedin",
-      ariaLabel: "Kết nối qua LinkedIn"
-    },
-    {
-      name: "Twitter / X",
-      href: "https://twitter.com",
-      icon: "twitter",
-      ariaLabel: "Theo dõi trên Twitter/X"
-    },
-    {
-      name: "Email",
-      href: "mailto:contact@huydev.me",
-      icon: "mail",
-      ariaLabel: "Gửi thư điện tử liên hệ"
-    },
-    {
-      name: "Telegram",
-      href: "https://t.me",
-      icon: "telegram",
-      ariaLabel: "Nhắn tin qua Telegram"
-    }
+    { label: "Góc nhìn", href: "#about" },
+    { label: "Công cụ", href: "#skills" },
+    { label: "Liên hệ", href: "#contact" },
   ],
   skillCategories: [
     {
-      category: "Frontend Architecture",
-      description: "Xây dựng giao diện phản hồi nhanh, mượt mà và tương thích mọi thiết bị",
+      category: "Giao diện",
+      description:
+        "Từ component đến trải nghiệm hoàn chỉnh trên nhiều kích thước màn hình.",
       skills: [
         { name: "React 19", highlight: true },
-        { name: "Next.js (App Router)", highlight: true },
+        { name: "Next.js", highlight: true },
         { name: "TypeScript", highlight: true },
         { name: "Tailwind CSS", highlight: true },
-        { name: "shadcn/ui", highlight: true },
-        { name: "Zustand" },
-        { name: "TanStack Query" },
-        { name: "Framer Motion" },
-        { name: "Web Vitals & SEO" }
-      ]
+        { name: "Web accessibility" },
+      ],
     },
     {
-      category: "Backend & Systems",
-      description: "Thiết kế API chuẩn RESTful, GraphQL và xử lý logic nghiệp vụ an toàn",
+      category: "Backend & dữ liệu",
+      description: "Xây dựng API và các phần nền tảng phía sau sản phẩm.",
       skills: [
         { name: "Node.js", highlight: true },
         { name: "NestJS", highlight: true },
         { name: "PostgreSQL", highlight: true },
-        { name: "Redis", highlight: true },
-        { name: "Prisma ORM" },
-        { name: "GraphQL" },
-        { name: "RESTful APIs" },
-        { name: "Microservices" }
-      ]
+        { name: "Redis" },
+        { name: "REST APIs" },
+      ],
     },
     {
-      category: "DevOps & Cloud Infrastructure",
-      description: "Triển khai hệ thống tự động hóa, giám sát và bảo đảm độ sẵn sàng cao",
+      category: "Triển khai",
+      description: "Tự động hóa quy trình và đưa ứng dụng lên môi trường thật.",
       skills: [
-        { name: "Vercel", highlight: true },
         { name: "Docker", highlight: true },
-        { name: "AWS (S3, EC2, CloudFront)" },
-        { name: "GitHub Actions CI/CD", highlight: true },
-        { name: "Cloudflare" },
-        { name: "Nginx" },
-        { name: "Linux Server" }
-      ]
+        { name: "GitHub Actions", highlight: true },
+        { name: "AWS" },
+        { name: "Linux" },
+        { name: "Vercel" },
+      ],
     },
-    {
-      category: "Tools & Methodologies",
-      description: "Quy trình làm việc chuyên nghiệp, kiểm thử và quản lý chất lượng phần mềm",
-      skills: [
-        { name: "Git & GitHub Workflow", highlight: true },
-        { name: "Figma to Code" },
-        { name: "Vitest / Jest" },
-        { name: "Playwright E2E" },
-        { name: "Turborepo" },
-        { name: "Agile / Scrum" }
-      ]
-    }
-  ],
-  projects: [
-    {
-      id: "project-1",
-      title: "Dự án 1",
-      description: "Mô tả ngắn về dự án sẽ được cập nhật sau.",
-      category: "Web App",
-      techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-      highlights: [],
-      featured: true
-    },
-    {
-      id: "project-2",
-      title: "Dự án 2",
-      description: "Mô tả ngắn về dự án sẽ được cập nhật sau.",
-      category: "SaaS",
-      techStack: ["React", "Node.js", "PostgreSQL"],
-      highlights: [],
-      featured: true
-    },
-    {
-      id: "project-3",
-      title: "Dự án 3",
-      description: "Mô tả ngắn về dự án sẽ được cập nhật sau.",
-      category: "Mobile / Web",
-      techStack: ["Next.js", "Prisma", "Vercel"],
-      highlights: [],
-      featured: false
-    }
   ],
   contact: {
-    title: "Hãy cùng kết nối & tạo dựng giá trị",
+    title: "Có điều gì hay ho?",
     subtitle:
-      "Tôi luôn hào hứng với các ý tưởng mới, dự án tiềm năng hoặc đơn giản là chia sẻ góc nhìn kỹ thuật.",
+      "Tôi sẵn sàng trò chuyện về công việc, ý tưởng web hoặc một cơ hội phù hợp.",
     email: "contact@huydev.me",
-    phone: "+84 (0) 90 123 4567",
     location: "TP. Hồ Chí Minh, Việt Nam",
-    workingHours: "Thứ 2 - Thứ 6: 09:00 - 18:00 (GMT+7)",
-    responseTime: "Phản hồi trong vòng 24 giờ làm việc"
-  }
-}
+  },
+};
 
-export default portfolioConfig
+export default portfolioConfig;

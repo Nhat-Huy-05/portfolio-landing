@@ -17,18 +17,21 @@ import {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const brandInitial =
+    portfolioConfig.personal.name.split(" ").at(-1)?.charAt(0) ??
+    portfolioConfig.personal.name.charAt(0);
 
   return (
     /* Outer wrapper: fixed, full-width, centered, pointer-events-none to allow clicks on page behind padding area */
-    <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-2 sm:px-3 pt-2.5 pointer-events-none">
-      <header className="pointer-events-auto w-[calc(100%-0.5rem)] max-w-[1400px] flex items-center justify-between px-4 sm:px-6 py-3 rounded-2xl border transition-all duration-300 bg-background/75 backdrop-blur-md border-border/60 shadow-[0_6px_26px_rgba(0,0,0,0.08)] dark:shadow-[0_6px_26px_rgba(0,0,0,0.45)]">
+    <div className="fixed inset-x-0 top-0 z-50 flex justify-center border-b border-border bg-background/95 px-4 backdrop-blur-sm sm:px-6">
+      <header className="pointer-events-auto flex w-full max-w-6xl items-center justify-between py-3">
         {/* Brand / Logo */}
         <Link
           href="#hero"
-          className="group flex items-center gap-2 text-base font-semibold tracking-tight text-foreground transition-colors hover:text-primary"
+          className="group flex items-center gap-2 text-base font-semibold text-foreground transition-colors hover:text-primary"
         >
           <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold shadow-sm transition-transform group-hover:scale-105">
-            {portfolioConfig.personal.name.charAt(0)}
+            {brandInitial}
           </span>
           <span className="font-heading font-bold text-foreground">
             {portfolioConfig.personal.name}
@@ -84,7 +87,7 @@ export default function Navbar() {
                 <SheetHeader className="text-left">
                   <SheetTitle className="flex items-center gap-2">
                     <span className="flex size-7 items-center justify-center rounded-md bg-primary text-primary-foreground font-bold text-sm">
-                      {portfolioConfig.personal.name.charAt(0)}
+                      {brandInitial}
                     </span>
                     <span>{portfolioConfig.personal.name}</span>
                   </SheetTitle>

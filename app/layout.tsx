@@ -1,24 +1,24 @@
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import "./globals.css"
-import Navbar from "@/components/layout/Navbar"
-import Footer from "@/components/layout/Footer"
-import { ThemeProvider } from "@/components/theme-provider"
-import { portfolioConfig } from "@/config/portfolio"
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
+import { portfolioConfig } from "@/config/portfolio";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-})
+});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: `${portfolioConfig.personal.name} | ${portfolioConfig.personal.title}`,
-  description: portfolioConfig.personal.shortBio,
+  description: portfolioConfig.personal.tagline,
   keywords: [
     "Portfolio",
     portfolioConfig.personal.name,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "React",
     "TypeScript",
     "Tailwind CSS",
-    "shadcn/ui"
+    "shadcn/ui",
   ],
   authors: [{ name: portfolioConfig.personal.name }],
   creator: portfolioConfig.personal.name,
@@ -35,20 +35,20 @@ export const metadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     title: `${portfolioConfig.personal.name} | ${portfolioConfig.personal.title}`,
-    description: portfolioConfig.personal.shortBio,
-    siteName: `${portfolioConfig.personal.name} Portfolio`
+    description: portfolioConfig.personal.tagline,
+    siteName: `${portfolioConfig.personal.name} Portfolio`,
   },
   twitter: {
     card: "summary_large_image",
     title: `${portfolioConfig.personal.name} | ${portfolioConfig.personal.title}`,
-    description: portfolioConfig.personal.shortBio
-  }
-}
+    description: portfolioConfig.personal.tagline,
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html
@@ -69,5 +69,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
